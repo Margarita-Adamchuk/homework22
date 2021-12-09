@@ -13,21 +13,21 @@ class Horse:
         print("Иго-го, Иго-го, Иго-го")
 
     def hop(self):
-        print("'Лошадь мчиься пверед!'")
+        print(f"'{self.name} мчиься пверед!'")
 
-class Jockey:
+class Jockey(Horse):
 
-    def __init__(self, name_jockey, neme_horse):
+    def __init__(self, name_jockey, name, color, breed):
+        Horse.__init__(self, name, color, breed)
         self.name_jockey = name_jockey
-        self.name_horse = neme_horse
+
 
     def ride(self):
         print(f"Ну что {self.name_jockey} поехали котаться!!!")
-        Horse.hop(self.name_horse)
+        Horse.hop(self)
 
 if __name__ == '__main__':
-    hari = Jockey("ГАРИ", "Розачка")
-    rozi = Horse("Розачка", "Белая", "Пони")
 
+    hari = Jockey("ГАРИ", "Розочка", "серый", "пони")
     hari.ride()
 
